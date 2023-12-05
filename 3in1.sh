@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Execute the first script
-source joinify-connect.sh
+source ./joinify-connect.sh
+
 #https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh
 
 # Execute the second script
