@@ -1,6 +1,6 @@
 #!/bin/bash
 # # Navigate to the folder containing the files
-cd "$(dirname "$0")"
+#cd "$(dirname "$0")"
 # Prompt the user for current and desired file extensions
 read -p "Enter the current file extension (e.g., .pdf, .PDF, .png, .jpeg, .JPEG, etc.): " current_extension
 read -p "Enter the desired file extension (e.g., .pdf, .PDF, .png, .jpeg, .JPEG, etc.): " user_extension
