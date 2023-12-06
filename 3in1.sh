@@ -1,18 +1,22 @@
 #!/bin/bash
 
-# Check if curl command is available
-if command -v curl &> /dev/null; then
-    SCRIPT1=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
-    SCRIPT2=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
-    SCRIPT3=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
-fi
+# Function to download script content
+download_script() {
+    local url="$1"
+    if command -v curl &> /dev/null; then
+        curl -L "$url"
+    elif command -v wget &> /dev/null; then
+        wget -qO- "$url"
+    else
+        echo "Error: Neither 'curl' nor 'wget' commands are available."
+        exit 1
+    fi
+}
 
-# Check if wget command is available
-if command -v wget &> /dev/null; then
-    SCRIPT1=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
-    SCRIPT2=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
-    SCRIPT3=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
-fi
+# Variables to store script content
+SCRIPT1=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh")
+SCRIPT2=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh")
+SCRIPT3=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh")
 
 # Check if all script variables have values
 if [ -z "$SCRIPT1" ] || [ -z "$SCRIPT2" ] || [ -z "$SCRIPT3" ]; then
