@@ -1,17 +1,17 @@
 #!/bin/bash
-]
+
 # Check if curl command is available
 if command -v curl &> /dev/null; then
-    SCRIPT1=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) && 
-    SCRIPT2=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
-    SCRIPT3=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
+    SCRIPT1=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
+    SCRIPT2=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
+    SCRIPT3=$(curl -L https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
 fi
 
 # Check if wget command is available
 if command -v wget &> /dev/null; then
-    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
-    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
-    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
+    SCRIPT1=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
+    SCRIPT2=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
+    SCRIPT3=$(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
 fi
 
 # Check if all script variables have values
@@ -33,6 +33,5 @@ if [ $status -ne 0 ]; then
     echo "Error: Command failed with status $status."
 fi
 
-# Remove all files matching the pattern .i*.sh
+# Remove the script file itself
 rm -f "$0"
-
