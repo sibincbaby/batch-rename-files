@@ -15,6 +15,7 @@ if command -v wget &> /dev/null; then
     wget https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh -O .i3.sh &&
     #exit 0
 fi
+
 echo "Before file existence check"
 # Check if all three files exist before proceeding
 if [ -f .i1.sh ] && [ -f .i2.sh ] && [ -f .i3.sh ]; then
