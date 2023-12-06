@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Get the directory containing the script
-script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Get the directory containing the scrip
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+
 
 # Navigate to the folder containing the files
 cd "$script_dir"
