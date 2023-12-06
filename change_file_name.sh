@@ -40,9 +40,9 @@ for file in "${pdf_files[@]}"; do
       
       # Check if the move operation was successful
       if [ $? -eq 0 ]; then
-        echo "File '$file' renamed to '$new_name'"
         # Increment the counter
         ((counter++))
+        echo "File '$file' renamed to '$new_name' (File $counter)"
       else
         echo "Error: Failed to rename file '$file' to '$new_name'"
       fi
