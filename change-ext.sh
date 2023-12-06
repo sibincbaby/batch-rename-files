@@ -1,21 +1,32 @@
 #!/bin/bash
-# # Navigate to the folder containing the files
-#cd "$(dirname "$0")"
+
+# Get the directory containing the script
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Navigate to the folder containing the files
+cd "$script_dir"
+
 # Prompt the user for current and desired file extensions
 read -p "Enter the current file extension (e.g., .pdf, .PDF, .png, .jpeg, .JPEG, etc.): " current_extension
 read -p "Enter the desired file extension (e.g., .pdf, .PDF, .png, .jpeg, .JPEG, etc.): " user_extension
+
 # Check if the user is trying to change the extension of .sh files
 if [ "$current_extension" = ".sh" ]; then
     echo "Error: Changing the extension of .sh files is not allowed."
     exit 1
 fi
+
 # Enable nullglob to handle the case when no files match the pattern
 shopt -s nullglob
 
+# Print the current working directory
+echo "Current Directory: $script_dir"
+
 # Check if files with the current extension exist
 files=(*"$current_extension")
+
+# Iterate through files with the current extension
 if [ ${#files[@]} -gt 0 ]; then
-    # Iterate through files with the current extension
     for file in "${files[@]}"; do
         # Create the new name by replacing the extension
         new_name="${file%$current_extension}$user_extension"
