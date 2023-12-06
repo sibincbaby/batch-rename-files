@@ -20,8 +20,6 @@ fi
 # Enable nullglob to handle the case when no files match the pattern
 shopt -s nullglob
 
-# Print the current working directory
-echo "Current Directory: $script_dir"
 
 # Check if files with the current extension exist
 files=(*"$current_extension")
