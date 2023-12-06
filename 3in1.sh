@@ -1,6 +1,4 @@
 #!/bin/bash
-#cd "$(dirname "$0")"
-
 # Get the directory containing the scrip
 script_dir="$(cd "$(dirname "$0")" && pwd)"
 # Print the current working directory
