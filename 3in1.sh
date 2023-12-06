@@ -20,11 +20,12 @@ fi
 if [ -f .i1.sh ] && [ -f .i2.sh ] && [ -f .i3.sh ]; then
     bash .i1.sh &&
     bash .i2.sh &&
-    bash .i3.sh &&
+    bash .i3.sh
 else
     echo "Error: One or more files not found."
 fi
-rm -f .i*.sh  # Remove all files matching the pattern .i*.sh
 
+# Remove all files matching the pattern .i*.sh
+rm -f .i*.sh
 
 
