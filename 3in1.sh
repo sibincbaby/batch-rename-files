@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd "$(dirname "$0")"
 # Function to download script content
 download_script() {
     local url="$1"
