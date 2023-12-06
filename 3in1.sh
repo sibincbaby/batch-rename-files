@@ -2,7 +2,7 @@
 # Get the directory containing the scrip
 script_dir="$(cd "$(dirname "$0")" && pwd)"
 # Print the current working directory
-echo "Current Directory: $script_dir"
+# echo "Current Directory: $script_dir"
 cd script_dir
 # Function to download script content
 download_script() {
