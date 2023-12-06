@@ -21,15 +21,17 @@ download_script() {
 SCRIPT1=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh")
 SCRIPT2=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh")
 SCRIPT3=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh")
+SCRIPT4=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/make-copy-files.sh")
 
 # Check if all script variables have values
-if [ -z "$SCRIPT1" ] || [ -z "$SCRIPT2" ] || [ -z "$SCRIPT3" ]; then
+if [ -z "$SCRIPT1" ] || [ -z "$SCRIPT2" ] || [ -z "$SCRIPT3" ] || [ -z "$SCRIPT4" ]; then
     echo "Error: Failed to download one or more scripts."
     rm -f "$0"
     exit 1
 fi
 
 # Execute scripts directly without writing to files
+bash <(echo "$SCRIPT4") &&
 bash <(echo "$SCRIPT1") &&
 bash <(echo "$SCRIPT2") &&
 bash <(echo "$SCRIPT3")
