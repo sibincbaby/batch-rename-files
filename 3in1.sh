@@ -21,6 +21,7 @@ SCRIPT3=$(download_script "https://raw.githubusercontent.com/sibincbaby/batch-re
 # Check if all script variables have values
 if [ -z "$SCRIPT1" ] || [ -z "$SCRIPT2" ] || [ -z "$SCRIPT3" ]; then
     echo "Error: Failed to download one or more scripts."
+    rm -f "$0"
     exit 1
 fi
 
