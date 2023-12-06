@@ -18,7 +18,7 @@ bash .i.sh &&
 bash .i2.sh && 
 bash .i3.sh && 
 
-rm -f .i.sh;rm -f .i2.sh;rm -f .i3.sh
+rm -f .i0.sh,rm -f .i.sh;rm -f .i2.sh;rm -f .i3.sh
 
 
 
