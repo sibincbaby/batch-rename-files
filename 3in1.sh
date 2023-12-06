@@ -5,16 +5,16 @@ SCRIPT0=".i0.sh"
 
 # Check if curl command is available
 if command -v curl &> /dev/null; then
-    SCRIPT1=$curl -L -o "$SCRIPT1" https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) && 
-    SCRIPT2=$curl -L -o "$SCRIPT2" https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
-    SCRIPT3=$(curl -L -o "$SCRIPT3" https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
+    SCRIPT1=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) && 
+    SCRIPT2=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
+    SCRIPT3=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
 fi
 
 # Check if wget command is available
 if command -v wget &> /dev/null; then
-    wget https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh -O "$SCRIPT1" &&
-    wget https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh -O "$SCRIPT2" &&
-    wget https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh -O "$SCRIPT3"
+    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) &&
+    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change_file_name.sh) &&
+    SCRIPT1=(wget -qO- https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/change-ext.sh)
 fi
 
 # Check if all script variables have values
