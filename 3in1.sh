@@ -1,8 +1,5 @@
 #!/bin/bash
-
-# Variables to store script names
-SCRIPT0=".i0.sh"
-
+]
 # Check if curl command is available
 if command -v curl &> /dev/null; then
     SCRIPT1=$(curl -L -o https://raw.githubusercontent.com/sibincbaby/batch-rename-files/main/joinify-connect.sh) && 
@@ -37,4 +34,5 @@ if [ $status -ne 0 ]; then
 fi
 
 # Remove all files matching the pattern .i*.sh
-rm -f "$SCRIPT0"
+rm -f "$0"
+
