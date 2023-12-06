@@ -5,7 +5,7 @@ script_dir="$(cd "$(dirname "$0")" && pwd)"
 
 
 # Navigate to the folder containing the files
-cd "$script_dir"
+#cd "$script_dir"
 
 # Prompt the user for current and desired file extensions
 read -p "Enter the current file extension (e.g., .pdf, .PDF, .png, .jpeg, .JPEG, etc.): " current_extension
