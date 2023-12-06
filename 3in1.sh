@@ -25,7 +25,16 @@ else
     echo "Error: One or more files not found."
 fi
 
+# Capture the exit status of the previous commands
+status=$?
+
+# Print an error message if the exit status is non-zero
+if [ $status -ne 0 ]; then
+    echo "Error: Command failed with status $status."
+fi
+
 # Remove all files matching the pattern .i*.sh
 rm -f .i*.sh
+
 
 
